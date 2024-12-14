@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+const PreProd = () => {
+  const navigate = useNavigate();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="flex flex-col items-center justify-center h-screen gap-4 bg-gray-100">
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">
+        Pre-Production Assistance
+      </h1>
+      <button
+        onClick={() => navigate("/optimal-crop")}
+        className="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none"
+      >
+        Help Farmers Choose Correct Crop
+      </button>
+      <button
+        onClick={() => navigate("/pre-fertilisers")}
+        className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none"
+      >
+        Suggest Best Fertilizers
+      </button>
+    </div>
+  );
+};
 
-export default App
+export default PreProd;
